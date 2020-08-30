@@ -41,15 +41,16 @@
   background-color: #dc3545;
   color: white;
 
-  label.logo {
+  span.logo {
     border: white 2px solid;
     border-radius: 10px;
     padding: 5px;
+    font-size: 30px;
     padding-left: 8px;
     padding-right: 16px;
     font-size: 30px;
-    margin: 10px;
-    cursor: pointer;
+    margin: 0px;
+    padding-bottom: 10px;
   }
 
   span.logo-text {
@@ -59,10 +60,7 @@
 
 #settings {
   float: right;
-
-  span {
-    position: relative;
-  }
+  position: relative;
 }
 
 #footer {
@@ -73,7 +71,7 @@
 
 button.btn.btn-outline-danger.settings {
   color: white;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-right: 10px;
   font-size: 18px;
   padding-left: 40px;
@@ -85,14 +83,20 @@ button.btn.btn-outline-danger.settings:hover {
 }
 
 i.fa.fa-cog {
-  font-size: 22px;
+  font-size: 36px;
   position: absolute;
-  top: 14px;
-  right: 95px;
+  top: 26px;
+  right: 1px;
+  cursor: pointer;
+}
+
+i.fa.fa-cog:hover {
+  color: rgb(204, 204, 204);
 }
 
 div.row {
   margin: 10px !important;
+  margin-top: 0px !important;
 }
 
 audio {
@@ -100,12 +104,16 @@ audio {
   -moz-transition:all 0.5s linear;
   -o-transition:all 0.5s linear;
   transition:all 0.5s linear;
-  -moz-box-shadow: 1px 1.5px 7px 0px #dc3545;
-  -webkit-box-shadow:  1px 1.5px 7px 0px #dc3545;
-  box-shadow: 1px 1.5px 7px 0px #dc3545;
-  -moz-border-radius:7px 7px 7px 7px ;
-  -webkit-border-radius:7px 7px 7px 7px ;
+  //-moz-box-shadow: 1px 1.5px 7px 0px #dc3545;
+  // -webkit-box-shadow:  0px 1.5px 7px 0px #dc3545;
+  //box-shadow: 1px 1.5px 7px 0px #dc3545;
+  -moz-border-radius:7px 7px 7px 7px;
+  // -webkit-border-radius:7px 7px 7px 7px ;
   border-radius:7px 7px 7px 7px ;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
 }
 
 .padding-margin {
@@ -118,9 +126,24 @@ audio {
   background-color: rgb(241, 63, 80);
 }
 
+.btn.btn-danger:hover {
+  color: rgb(241, 63, 80);
+  background: white;
+}
+
 a, a:active, a:hover {
   color: white;
   font-size: 16px;
+}
+
+.modal-container { 
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 200%;
+  width: 100%;
+  top: -650px;
+  z-index: 100;
+  left: 0;
 }
 
 // audio:hover, audio:focus, audio:active {
