@@ -85,7 +85,7 @@ button.btn.btn-outline-danger.settings:hover {
 i.fa.fa-cog {
   font-size: 36px;
   position: absolute;
-  top: 26px;
+  top: 30px;
   right: 1px;
   cursor: pointer;
 }
@@ -139,11 +139,20 @@ a, a:active, a:hover {
 .modal-container { 
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  height: 200%;
+  height: 100%;
   width: 100%;
-  top: -650px;
+  top: 0;
   z-index: 100;
   left: 0;
+}
+
+.inputFile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 // audio:hover, audio:focus, audio:active {

@@ -3,6 +3,7 @@ import React from 'react';
 import  './App.scss';
 import 'font-awesome/css/font-awesome.min.css';
 import SettingsModal from './components/SettingsModal/SettingsModal';
+import UploadModal from './components/UploadModal/UploadModal';
 const ReactHighcharts = require('react-highcharts'); // Expects that Highcharts was loaded in the code.
 
 class App extends React.Component<any, any> {
@@ -11,7 +12,8 @@ class App extends React.Component<any, any> {
         super(props);
 
         this.state = {
-            showSettingsModal: false
+            showSettingsModal: false,
+            showUploadModal: false
         };
     }
 
@@ -71,7 +73,7 @@ class App extends React.Component<any, any> {
                             </div>
                             <div className={"col-2"}>
                             <div id={"settings"}>
-                                <i className="fa fa-cog" onClick={() => this.openModal()}></i>
+                                <i className="fa fa-cog" onClick={() => this.openSettingsModal()}></i>
                             </div>
                             </div>
                         </div>
@@ -88,6 +90,7 @@ class App extends React.Component<any, any> {
                         <div className={"col-12"}>
                             <hr />
                             <h3>Sound Library</h3>
+                            <button className={"btn btn-outline-danger"} onClick={() => this.openUploadModal()}>Upload</button>
                             <div className={"card padding-margin"}>
                             <div className={"col-12"}>
                                 <h5><strong>Track 1</strong></h5>
@@ -146,23 +149,37 @@ class App extends React.Component<any, any> {
                 </div>
                 {!this.state.showSettingsModal? <div></div> : <SettingsModal  
                     show={this.state.showSettingsModal} 
-                    onCloseModal={this.closeModal}
+                    onCloseModal={this.closeSettingsModal}
+                />}
+                {!this.state.showUploadModal? <div></div> : <UploadModal  
+                    show={this.state.showUploadModal} 
+                    onCloseModal={this.closeUploadModal}
                 />}
             </div>
         );
     }
 
-    private closeModal = () => {
+    private closeSettingsModal = () => {
         this.setState({
             showSettingsModal: false
         });
     }
 
-    private openModal = () => {
-        console.log("openModal");
-
+    private openSettingsModal = () => {
         this.setState({
             showSettingsModal: true
+        })
+    }
+
+    private closeUploadModal = () => {
+        this.setState({
+            showUploadModal: false
+        });
+    }
+
+    private openUploadModal = () => {
+        this.setState({
+            showUploadModal: true
         })
     }
 }
