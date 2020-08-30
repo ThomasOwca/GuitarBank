@@ -65,6 +65,12 @@
   }
 }
 
+#footer {
+  background-color: #dc3545;
+  color: white;
+  padding: 20px;
+}
+
 button.btn.btn-outline-danger.settings {
   color: white;
   margin-top: 20px;
@@ -84,3 +90,44 @@ i.fa.fa-cog {
   top: 14px;
   right: 95px;
 }
+
+div.row {
+  margin: 10px !important;
+}
+
+audio {
+  -webkit-transition:all 0.5s linear;
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  transition:all 0.5s linear;
+  -moz-box-shadow: 1px 1.5px 7px 0px #dc3545;
+  -webkit-box-shadow:  1px 1.5px 7px 0px #dc3545;
+  box-shadow: 1px 1.5px 7px 0px #dc3545;
+  -moz-border-radius:7px 7px 7px 7px ;
+  -webkit-border-radius:7px 7px 7px 7px ;
+  border-radius:7px 7px 7px 7px ;
+}
+
+.padding-margin {
+ padding: 6px;
+ margin-top: 15px;
+ margin-bottom: 25px; 
+}
+
+.btn.btn-danger {
+  background-color: rgb(241, 63, 80);
+}
+
+a, a:active, a:hover {
+  color: white;
+  font-size: 16px;
+}
+
+// audio:hover, audio:focus, audio:active {
+//   -webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+//   -moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+//   box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+//   -webkit-transform: scale(1.05);
+//   -moz-transform: scale(1.05);
+//   transform: scale(1.05);
+// }
