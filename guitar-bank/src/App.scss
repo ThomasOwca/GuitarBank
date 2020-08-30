@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#header {
+  background-color: #dc3545;
+  color: white;
+
+  label.logo {
+    border: white 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 16px;
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  span.logo-text {
+    padding-top: 3px;
+  }
+}
+
+#settings {
+  float: right;
+
+  span {
+    position: relative;
+  }
+}
+
+button.btn.btn-outline-danger.settings {
+  color: white;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+button.btn.btn-outline-danger.settings:hover {
+  color: white;
+  border: white 2px solid;
+}
+
+i.fa.fa-cog {
+  font-size: 22px;
+  position: absolute;
+  top: 14px;
+  right: 95px;
+}
