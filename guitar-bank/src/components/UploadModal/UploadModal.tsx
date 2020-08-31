@@ -100,10 +100,14 @@ export default class UploadModal extends React.Component<any, any> {
         
             // Details of the uploaded file 
             console.log(this.state.selectedFile); 
-            console.log(formData);
+            // Display the key/value pairs
+            for (var pair of (formData.entries() as any))
+            {
+                console.log(pair[0]);
+                console.log(pair[1]); 
+            }
         
-            // Request made to the backend api 
-            // Send formData object 
+            // Send formData object to the back-end API. 
             //axios.post("api/uploadfile", formData); 
         }
       }; 
