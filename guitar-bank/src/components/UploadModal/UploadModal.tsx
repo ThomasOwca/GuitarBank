@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import GeneralModal from "../GeneralModal/GeneralModal";
 
 export default class UploadModal extends React.Component<any, any> {    
     constructor(props: any) {
@@ -13,7 +14,8 @@ export default class UploadModal extends React.Component<any, any> {
             show: true,
             messageBody: "",
             messageTitle: "",
-            selectedFile: null
+            selectedFile: null,
+            showGeneralModal: false
         };
     }
 
@@ -58,7 +60,7 @@ export default class UploadModal extends React.Component<any, any> {
                             </Modal.Footer>
                         </Modal.Dialog>
                     </div>
-                    {/* {this.state.showMessageModal ? <CustomModal {...this.props} useListOption={false} listMessages={[]} showLoginButton={false} title={this.state.messageTitle} body={this.state.messageBody} buttontitle={"Close"} show={this.state.showMessageModal} onCloseModal={this.closeWarningModal} /> : <div></div>} */}
+                    {this.state.showGeneralModal ? <GeneralModal title={"Upload Warning"} body={"Please select a file!"} buttontitle={"Close"} show={this.state.showGeneralModal} onCloseModal={this.closeGeneralModal} /> : <div></div>}
                 </div>
             );
         }
@@ -67,26 +69,43 @@ export default class UploadModal extends React.Component<any, any> {
         }
     }
 
+    private closeGeneralModal = () => {
+        this.setState({
+            showGeneralModal: false
+        });
+    }
+
+    private openGeneralModal = () => {
+        this.setState({
+            showGeneralModal: true
+        })
+    }
+
     // On file upload (click the upload button) 
     private onFileUpload = () => { 
      
         // Create an object of formData 
         const formData = new FormData(); 
-       
-        // Update the formData object 
-        formData.append( 
-          "myFile", 
-          this.state.selectedFile, 
-          this.state.selectedFile.name 
-        ); 
-       
-        // Details of the uploaded file 
-        console.log(this.state.selectedFile); 
-        console.log(formData);
-       
-        // Request made to the backend api 
-        // Send formData object 
-        //axios.post("api/uploadfile", formData); 
+
+        if (this.state.selectedFile === null || this.state.selectedFile === undefined) {
+            this.openGeneralModal();
+        }
+        else {
+            // Update the formData object 
+            formData.append( 
+            "myFile", 
+            this.state.selectedFile, 
+            this.state.selectedFile.name 
+            ); 
+        
+            // Details of the uploaded file 
+            console.log(this.state.selectedFile); 
+            console.log(formData);
+        
+            // Request made to the backend api 
+            // Send formData object 
+            //axios.post("api/uploadfile", formData); 
+        }
       }; 
 
     // On file select (from the pop up) 
@@ -110,7 +129,7 @@ export default class UploadModal extends React.Component<any, any> {
                     <p>File Type: {this.state.selectedFile.type}</p> 
                     <p> 
                         Last Modified:{" "} 
-                        {this.state.selectedFile.lastModifiedDate.toDateString()} 
+                        {this.state.selectedFile.lastModifiedDate ? this.state.selectedFile.lastModifiedDate.toDateString() : ""} 
                     </p> 
                 </div> 
           ); 

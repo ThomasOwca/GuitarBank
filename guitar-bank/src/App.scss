@@ -146,6 +146,16 @@ a, a:active, a:hover {
   left: 0;
 }
 
+.general-modal-container { 
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 110;
+  left: 0;
+}
+
 .inputFile {
 	width: 0.1px;
 	height: 0.1px;

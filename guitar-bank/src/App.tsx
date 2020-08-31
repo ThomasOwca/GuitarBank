@@ -13,7 +13,8 @@ class App extends React.Component<any, any> {
 
         this.state = {
             showSettingsModal: false,
-            showUploadModal: false
+            showUploadModal: false,
+            showGeneralModal: false
         };
     }
 
